@@ -1,23 +1,29 @@
 import division.DivisionClass;
+import division.ZeroException;
 import multiplication.MultiClass;
 import subtraction.SubClass;
 import sum.SumClass;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InitCalculator {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ZeroException {
         boolean stop = true;
         while(stop) {
+            float num1 = 0, num2 = 0;
             System.out.println("Choose operation: input minus or sum or degree or multiple");
             Scanner sc = new Scanner(System.in);
             String inputOperation = sc.nextLine();
-            System.out.println("Enter the first number: ");
-            float num1 = sc.nextFloat();
-            System.out.println("Enter the second number: ");
-            float num2 = sc.nextFloat();
-
-            System.out.println("Enter the first number: ");
+            try {
+                System.out.println("Enter the first number: ");
+                num1 = sc.nextFloat();
+                System.out.println("Enter the second number: ");
+                num2 = sc.nextFloat();
+                System.out.println("Enter the first number: ");
+            }catch(InputMismatchException imp){
+                imp.printStackTrace();
+            }
             if(new String("minus").equals(inputOperation)) {
                 System.out.printf("%.4f", new SubClass().Sub(num1, num2));
             }
