@@ -11,15 +11,16 @@ public class InitCalculator {
     public static void main(String[] args) throws ZeroException {
         boolean stop = true;
         while(stop) {
-            float num1 = 0, num2 = 0;
+            int num1 = 0;
+            int num2 = 0;
             System.out.println("Choose operation: input minus or sum or degree or multiple");
             Scanner sc = new Scanner(System.in);
             String inputOperation = sc.nextLine();
             try {
                 System.out.println("Enter the first number: ");
-                num1 = sc.nextFloat();
+                num1 = sc.nextInt();
                 System.out.println("Enter the second number: ");
-                num2 = sc.nextFloat();
+                num2 = sc.nextInt();
                 System.out.println("Enter the first number: ");
             }catch(InputMismatchException imp){
                 imp.printStackTrace();

@@ -1,7 +1,7 @@
 package division;
 
 public class DivisionClass implements DivisionInterface {
-    public double division(int one, int two) throws ZeroException{
+    public int division(int one, int two) throws ZeroException{
         if(two == 0){
             new ZeroException();
         }
